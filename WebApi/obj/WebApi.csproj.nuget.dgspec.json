@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\Extern\\AARR\\WebApi\\WebApi.csproj": {}
+    "c:\\Users\\user\\Desktop\\AARR\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\Extern\\AARR\\WebApi\\WebApi.csproj": {
+    "c:\\Users\\user\\Desktop\\AARR\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\Extern\\AARR\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "c:\\Users\\user\\Desktop\\AARR\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\user\\Desktop\\Extern\\AARR\\WebApi\\WebApi.csproj",
+        "projectPath": "c:\\Users\\user\\Desktop\\AARR\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\Extern\\AARR\\WebApi\\obj\\",
+        "outputPath": "c:\\Users\\user\\Desktop\\AARR\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +40,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "NLog": {
+              "target": "Package",
+              "version": "[4.7.15, )"
+            },
+            "NLog.Targets.ElasticSearch": {
+              "target": "Package",
+              "version": "[7.5.0, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.14.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -49,8 +63,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -62,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
