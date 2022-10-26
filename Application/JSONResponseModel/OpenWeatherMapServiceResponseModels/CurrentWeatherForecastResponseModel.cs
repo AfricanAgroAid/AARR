@@ -1,0 +1,5 @@
+namespace Application.JSONResponseModel.OpenWeatherMapServiceResponseModels;
+
+public class CurrentWeatherForecastResponseModel
+{
+}
