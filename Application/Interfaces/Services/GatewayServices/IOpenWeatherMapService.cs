@@ -4,7 +4,8 @@ namespace Application.Interfaces.Services.GatewayServices;
 
 public interface IOpenWeatherMapService
 {
-    Task<GeocodingResponseModels> GetCityCoordinates(string cityName, int responseLimit = 1,string countryCode = "ng");
-    Task<DaysClimaticForecastResponseModel> GetDaysClimaticForecast(decimal lat, decimal lon, int daysCount = 7);
-    Task<CurrentWeatherForecastResponseModel> GetCurrentWeatherForecast(decimal lat, decimal lon, string countryCode = "ng");
+    Task<GeocodingResponseModels> GetCityCoordinatesAsync(string cityName, int responseLimit = 1,string countryCode = "ng");
+    Task<List<DaysClimaticForecastResponseModel>> GetDaysClimaticForecastAsync(string cityName, List<string> farmLocations, string units ="metric", int daysCount = 7);
+    Task<List<DaysClimaticForecastResponseModel>> GetMonthClimaticForecastAsync(string cityName, List<string> farmLocations, string units ="metric", int daysCount = 30);
+    Task<CurrentWeatherForecastResponseModel> GetCurrentWeatherForecastAsync(string cityName, string units = "metric", string countryCode = "ng");
 }
