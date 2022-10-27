@@ -21,10 +21,10 @@ namespace Gateway.Services
             }
             public async Task<bool> VerifyPhoneNumber(string phoneNumber)
             {
-                var link = $"https://api.numlookupapi.com/v1/validate/{phoneNumber}?apikey={_apiKey}";
-                    _httpClient.BaseAddress = new Uri(link);
-                    var response = await _httpClient.GetAsync(link);
-                    return (response.IsSuccessStatusCode);
+              var link = $"https://api.numlookupapi.com/v1/validate/{phoneNumber}?apikey={_apiKey}";
+              _httpClient.BaseAddress = new Uri(link);
+              var response = await _httpClient.GetAsync(link);
+              return (response.IsSuccessStatusCode);
             }
           }
 }
