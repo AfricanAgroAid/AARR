@@ -1,10 +1,6 @@
 namespace Domain.Common.Contracts;
 
-public abstract class AuditableEntity : AuditableEntity<Guid>
-{
-}
-
-public abstract class AuditableEntity<T> : BaseEntity, IAuditableEntity, ISoftDelete
+public class AuditableEntity : BaseEntity, IAuditableEntity, ISoftDelete
 {
     public string CreatedBy { get; set; }
     public DateTime CreatedOn { get; private set; }
