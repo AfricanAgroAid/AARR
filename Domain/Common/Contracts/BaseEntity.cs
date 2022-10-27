@@ -2,7 +2,8 @@
 
 namespace Domain.Common.Contracts;
 
-public abstract class BaseEntity 
+public class BaseEntity 
 {
-    protected string Id = Guid.NewGuid().ToString().Substring(0, 5);
+
+    public string Id {get; set; } = Guid.NewGuid().ToString().Substring(0, 5);
 }
