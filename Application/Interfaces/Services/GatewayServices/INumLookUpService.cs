@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Application.JSONResponseModel.NumLookUpService;
 
 namespace Application.Interfaces.Services.GatewayServices
 {
     public interface INumLookUpService
     {
-        Task<NumberLookUpResponseModel> VerifyPhoneNumber(string phoneNumber);
+        Task<NumberLookUpResponseModel> VerifyPhoneNumber(string phoneNumber, string countryCode);
     }
 }
