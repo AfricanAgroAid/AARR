@@ -1,4 +1,4 @@
-using Application.JSONResponseModel.NumLookUpService;
+using Application.JSONResponseModel.NumberLookUpServices;
 
 namespace Application.Interfaces.Services.GatewayServices
 {

@@ -10,7 +10,7 @@ namespace Persistence.Extensions;
 
 public static class ServiceCollectionExtension
 {
-    public static IServiceCollection AddDbConfiguration(this IServiceCollection services, IConfiguration configuration)
+     public static IServiceCollection AddDbConfiguration(this IServiceCollection services, IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("AARRConnectionString");
         services.AddDbContext<ApplicationContext>(option => 
@@ -20,7 +20,7 @@ public static class ServiceCollectionExtension
 
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-        services.AddScoped<IFarmRepository, FarmRepository>();
+       services.AddScoped<IFarmRepository, FarmRepository>();
         services.AddScoped<IFarmerRepository, FarmerRepository>();
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         return services;

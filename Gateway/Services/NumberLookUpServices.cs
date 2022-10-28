@@ -1,5 +1,5 @@
 using Application.Interfaces.Services.GatewayServices;
-using Application.JSONResponseModel.NumLookUpService;
+using Application.JSONResponseModel.NumberLookUpServices;
 using Gateway.Extensions;
 using Microsoft.Extensions.Configuration;
 

@@ -6,12 +6,11 @@ namespace IOC.Extensions;
 
 public static class ServiceCollectionExtension
 {
-          public static IServiceCollection AddIOCService(this IServiceCollection services, IConfiguration configuration)
-          {
-            services
-            .AddDbConfiguration(configuration)
-            .AddRepositories();
-            return services;
-
-          }
+    public static IServiceCollection AddIOCService(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.
+        AddDbConfiguration(configuration)
+        .AddRepositories();
+        return services;
+    }
 }
