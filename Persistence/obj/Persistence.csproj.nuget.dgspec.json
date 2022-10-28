@@ -1,40 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "D:\\staa99\\Desktop\\AARR\\Persistence\\Persistence.csproj": {}
+    "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Persistence\\Persistence.csproj": {}
   },
   "projects": {
-    "D:\\staa99\\Desktop\\AARR\\Application\\Application.csproj": {
+    "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\staa99\\Desktop\\AARR\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\staa99\\Desktop\\AARR\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\staa99\\.nuget\\packages\\",
-        "outputPath": "D:\\staa99\\Desktop\\AARR\\Application\\obj\\",
+        "projectPath": "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Application\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\staa99\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\Tools\\NUPKG": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\staa99\\Desktop\\AARR\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\staa99\\Desktop\\AARR\\Domain\\Domain.csproj"
+              "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Domain\\Domain.csproj"
               }
             }
           }
@@ -76,7 +69,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -85,34 +79,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\staa99\\Desktop\\AARR\\Domain\\Domain.csproj": {
+    "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\staa99\\Desktop\\AARR\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\staa99\\Desktop\\AARR\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\staa99\\.nuget\\packages\\",
-        "outputPath": "D:\\staa99\\Desktop\\AARR\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\staa99\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\Tools\\NUPKG": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -135,7 +122,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -144,44 +132,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\staa99\\Desktop\\AARR\\Persistence\\Persistence.csproj": {
+    "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\staa99\\Desktop\\AARR\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "D:\\staa99\\Desktop\\AARR\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\staa99\\.nuget\\packages\\",
-        "outputPath": "D:\\staa99\\Desktop\\AARR\\Persistence\\obj\\",
+        "projectPath": "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\staa99\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\Tools\\NUPKG": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\staa99\\Desktop\\AARR\\Application\\Application.csproj": {
-                "projectPath": "D:\\staa99\\Desktop\\AARR\\Application\\Application.csproj"
+              "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Application\\Application.csproj"
               },
-              "D:\\staa99\\Desktop\\AARR\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\staa99\\Desktop\\AARR\\Domain\\Domain.csproj"
+              "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\Extern\\Group\\AARR\\Domain\\Domain.csproj"
               }
             }
           }
@@ -207,7 +188,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -216,7 +198,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

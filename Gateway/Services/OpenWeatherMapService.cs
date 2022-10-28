@@ -9,7 +9,7 @@ public class OpenWeatherMapService : IOpenWeatherMapService
 {
     private readonly HttpClient _client;
     private readonly IConfigurationSection _configuration;
-    private readonly string  _apiKey;
+    private readonly string _apiKey;
 
     public OpenWeatherMapService(IConfigurationSection configuration)
     {
@@ -18,23 +18,117 @@ public class OpenWeatherMapService : IOpenWeatherMapService
         _apiKey = _configuration.GetSection("ApiKey").Value;
     }
 
-    public async Task<GeocodingResponseModels> GetCityCoordinates(string cityName, int responseLimit = 1, string countryCode = "ng")
+    public async Task<GeocodingResponseModels> GetCityCoordinatesAsync(string cityName, int responseLimit = 1, string countryCode = "ng")
     {
-        
-       _client.BaseAddress = new Uri($"https://api.openweathermap.org/geo/1.0/direct?q={cityName},{countryCode}&limit={responseLimit}&appid={_apiKey}");
-       var response = await _client.GetAsync($"https://api.openweathermap.org/geo/1.0/direct?q={cityName},{countryCode}&limit={responseLimit}&appid={_apiKey}");
-       if(!response.IsSuccessStatusCode) throw new Exception($"The City Coordinates For The City Location:{cityName} Could Not Be Recovered"); 
-       var responseReturned = await response.ReadContentAs<GeocodingResponseModels>();
-       return responseReturned;
+
+        try
+        {
+            _client.BaseAddress = new Uri($"https://api.openweathermap.org/geo/1.0/direct?q={cityName},{countryCode}&limit={responseLimit}&appid={_apiKey}");
+            var response = await _client.GetAsync($"https://api.openweathermap.org/geo/1.0/direct?q={cityName},{countryCode}&limit={responseLimit}&appid={_apiKey}");
+            if (!response.IsSuccessStatusCode) throw new Exception($"The City Coordinates For The City Location:{cityName} Could Not Be Recovered");
+            var responseReturned = await response.ReadContentAs<GeocodingResponseModels>();
+            return responseReturned;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            Console.WriteLine("Function End...");
+        }
     }
 
-    public Task<CurrentWeatherForecastResponseModel> GetCurrentWeatherForecast(decimal lat, decimal lon, string countryCode = "ng")
+    public async Task<CurrentWeatherForecastResponseModel> GetCurrentWeatherForecastAsync(string cityName, string units = "metric", string countryCode = "ng")
     {
-        throw new NotImplementedException();
+        try
+        {
+            var response = await GetCityCoordinatesAsync(cityName);
+            var requestResponse = await _client.GetAsync($"https://api.openweathermap.org/data/2.5/weather?lat={response.Latitude}&lon={response.Longitude}&appid={_apiKey}&units={units}");
+            if (!requestResponse.IsSuccessStatusCode) throw new Exception($"The Current Weather Forecast For The City Location:{cityName} Could Not Be Recovered");
+            var responseReturned = await requestResponse.ReadContentAs<CurrentWeatherForecastResponseModel>();
+            responseReturned.Dates = new Dates
+            {
+                ForecastDate = CurrentWeatherForecastResponseModel.UnixTimestampToDateTime(responseReturned.Date),
+                SunriseTime = CurrentWeatherForecastResponseModel.UnixTimestampToDateTime(responseReturned.TimeInformation.Sunrise),
+                SunsetTime = CurrentWeatherForecastResponseModel.UnixTimestampToDateTime(responseReturned.TimeInformation.Sunset)
+
+            };
+            return responseReturned;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            Console.WriteLine("Function End...");
+        }
     }
 
-    public Task<DaysClimaticForecastResponseModel> GetDaysClimaticForecast(decimal lat, decimal lon, int daysCount = 7)
+    public async Task<List<DaysClimaticForecastResponseModel>> GetDaysClimaticForecastAsync(string cityName, List<string> farmLocations, string units = "metric", int daysCount = 7)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var daysClimaticForecast = new List<DaysClimaticForecastResponseModel>();
+            foreach (string farmLocation in farmLocations)
+            {
+                var response = await GetCityCoordinatesAsync(cityName);
+                var requestResponse = await _client.GetAsync($"https://pro.openweathermap.org/data/2.5/forecast/climate?lat={response.Latitude}&lon={response.Longitude}&cnt={daysCount}&appid={_apiKey}&units={units}");
+                if (!requestResponse.IsSuccessStatusCode) throw new Exception($"The Current Weather Forecast For The City Location:{cityName} Could Not Be Recovered");
+                var responseReturned = await requestResponse.ReadContentAs<DaysClimaticForecastResponseModel>();
+
+                //The Forecast Date Information for each daily forecast
+                responseReturned.DailyForecasts.Select(df => df.Dates = new Dates
+                {
+                    ForecastDate = CurrentWeatherForecastResponseModel.UnixTimestampToDateTime(df.Date),
+                    SunriseTime = CurrentWeatherForecastResponseModel.UnixTimestampToDateTime(df.Sunrise),
+                    SunsetTime = CurrentWeatherForecastResponseModel.UnixTimestampToDateTime(df.Sunset)
+                });
+                daysClimaticForecast.Add(responseReturned);
+            }
+            return daysClimaticForecast;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            Console.WriteLine("Function End...");
+        }
+    }
+
+    public async  Task<List<DaysClimaticForecastResponseModel>> GetMonthClimaticForecastAsync(string cityName, List<string> farmLocations, string units = "metric", int daysCount = 30)
+    {
+        try
+        {
+            var daysClimaticForecast = new List<DaysClimaticForecastResponseModel>();
+            foreach (string farmLocation in farmLocations)
+            {
+                var response = await GetCityCoordinatesAsync(cityName);
+                var requestResponse = await _client.GetAsync($"https://pro.openweathermap.org/data/2.5/forecast/climate?lat={response.Latitude}&lon={response.Longitude}&cnt={daysCount}&appid={_apiKey}&units={units}");
+                if (!requestResponse.IsSuccessStatusCode) throw new Exception($"The Current Weather Forecast For The City Location:{cityName} Could Not Be Recovered");
+                var responseReturned = await requestResponse.ReadContentAs<DaysClimaticForecastResponseModel>();
+
+                //The Forecast Date Information for each daily forecast
+                responseReturned.DailyForecasts.Select(df => df.Dates = new Dates
+                {
+                    ForecastDate = CurrentWeatherForecastResponseModel.UnixTimestampToDateTime(df.Date),
+                    SunriseTime = CurrentWeatherForecastResponseModel.UnixTimestampToDateTime(df.Sunrise),
+                    SunsetTime = CurrentWeatherForecastResponseModel.UnixTimestampToDateTime(df.Sunset)
+                });
+                daysClimaticForecast.Add(responseReturned);
+            }
+            return daysClimaticForecast;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            Console.WriteLine("Function End...");
+        }
     }
 }
