@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Application.JSONResponseModel;
+using System;
 
 public interface ICityService
 {
-    Task GetAllCitiesAsync();
+    Task<IList<City>> GetAllCitiesAsync();
 }

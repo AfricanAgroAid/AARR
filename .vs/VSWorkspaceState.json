@@ -2,8 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\Application",
-    "\\Persistence",
+    "\\Application\\Interfaces",
+    "\\Gateway",
+    "\\Gateway\\Services",
+    "\\Infrastructure",
     "\\Persistence\\Extensions"
   ],
+  "SelectedNode": "\\Gateway\\Services\\NumLookUpService.cs",
   "PreviewInSolutionExplorer": false
 }
