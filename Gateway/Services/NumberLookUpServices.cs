@@ -17,9 +17,9 @@ namespace Gateway.Services
             _apiKey = _configuration.GetSection("NumLookUpKey").Value;
 
         }
-        public async Task<NumberLookUpResponseModel> VerifyPhoneNumber(string phoneNumber)
+        public async Task<NumberLookUpResponseModel> VerifyPhoneNumber(string phoneNumber, string countryCode)
         {
-            var link = $"https://api.numlookupapi.com/v1/validate/{phoneNumber}?apikey={_apiKey}";
+            var link = $"https://api.numlookupapi.com/v1/validate/{phoneNumber}?apikey={_apiKey}&country_code={countryCode.ToUpper()}";
             _httpClient.BaseAddress = new Uri(link);
             var response = await _httpClient.GetAsync(link);
             if(!response.IsSuccessStatusCode) throw new Exception($"Number Verification Failed For Number:{phoneNumber}");

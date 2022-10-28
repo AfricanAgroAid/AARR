@@ -4,6 +4,6 @@ namespace Application.Interfaces.Services.GatewayServices
 {
     public interface INumLookUpService
     {
-        Task<NumberLookUpResponseModel> VerifyPhoneNumber(string phoneNumber);
+        Task<NumberLookUpResponseModel> VerifyPhoneNumber(string phoneNumber, string countryCode);
     }
 }
