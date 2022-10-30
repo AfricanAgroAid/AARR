@@ -1,7 +1,7 @@
+using Application.Interfaces.Services.GatewayServices;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.Extensions;
-
 namespace IOC.Extensions;
 
 public static class ServiceCollectionExtension
@@ -10,7 +10,9 @@ public static class ServiceCollectionExtension
     {
         services.
         AddDbConfiguration(configuration)
-        .AddRepositories();
+        .AddRepositories()
+        .AddGateway();
         return services;
     }
+   
 }

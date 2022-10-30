@@ -1,5 +1,7 @@
 using Application.Interfaces;
 using Application.Interfaces.Repositories;
+using Application.Interfaces.Services.GatewayServices;
+using Gateway.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,10 +22,19 @@ public static class ServiceCollectionExtension
 
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-       services.AddScoped<IFarmRepository, FarmRepository>();
-        services.AddScoped<IFarmerRepository, FarmerRepository>();
-        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+       services.AddScoped<IFarmRepository, FarmRepository>()
+        .AddScoped<IFarmerRepository, FarmerRepository>()
+        .AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         return services;
     }
+       public static IServiceCollection AddGateway(this IServiceCollection services)
+    {
+        services.
+        AddScoped<IOpenWeatherMapService,OpenWeatherMapService>()
+        .AddScoped<INumLookUpService, NumberLookUpServices>()
+        .AddScoped<ICityService, CityService>();
+        return services;
+    }
+   
 }
 
